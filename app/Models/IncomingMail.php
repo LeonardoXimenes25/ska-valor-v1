@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'mail_category_id', 
@@ -20,5 +21,10 @@ class IncomingMail extends Model
 {
     public function category(): BelongsTo {
         return $this->belongsto(MailCategory::class, 'mail_category_id');
+    }
+
+    public function dispositions(): HasMany
+    {
+        return $this->hasMany(Disposition::class);
     }
 }

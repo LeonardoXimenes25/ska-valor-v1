@@ -13,10 +13,14 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class IncomingMailResource extends Resource
 {
     protected static ?string $model = IncomingMail::class;
+
+    protected static ?string $navigationLabel = 'Karta Tama';
+    protected static string | UnitEnum | null $navigationGroup = 'Manajementu Karta';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

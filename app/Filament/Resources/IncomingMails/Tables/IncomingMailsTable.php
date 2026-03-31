@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\IncomingMails\Tables;
 
+use App\Filament\Exports\IncomingMailExporter;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ExportAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -14,25 +16,42 @@ class IncomingMailsTable
     {
         return $table
             ->columns([
-                TextColumn::make('mail_category_id')
-                    ->label('Category')
-                    ->getStateUsing(fn ($record) => $record->category->name),
-                TextColumn::make('reference_number')
-                    ->label('Reference Number'),
+                TextColumn::make('id')
+                    ->label('Nu')
+                    ->sortable(),
+
                 TextColumn::make('sender')
-                    ->label('Sender'),
+                    ->label('Natureza Dokumentus'),
+
+                TextColumn::make('reference_number')
+                    ->label('Numeru Dokumentus'),
+                
                 TextColumn::make('subject')
-                    ->label('Subject'),
+                    ->label('Sintexe Assuntu'),
+                
                 TextColumn::make('mail_date')
-                    ->label('Mail Date')
+                    ->label('Data Karta')
                     ->date(),
+                
                 TextColumn::make('received_date')
-                    ->label('Received Date')
-                    ->date(),  
+                    ->label('Data Resepsaun')
+                    ->date(),
+
+                TextColumn::make('mail_category_id')
+                    ->label('Kategoria')
+                    ->getStateUsing(fn ($record) => $record->category->name),
+                
                 TextColumn::make('attachment')
-                    ->label('Attachment URL'),
+                    ->label('Dokumentus')
+                    ->icon('heroicon-s-document-text')
+                    ->iconColor('danger')
+                    ->color('primary')
+                    ->formatStateUsing(fn () => 'Haree PDF') // Mengubah tulisan path menjadi teks statis
+                    ->url(fn ($record) => asset('storage/' . $record->attachment), true) // Klik untuk buka di tab baru
+                    ->badge(), 
+                
                 TextColumn::make('description')
-                    ->label('Description')
+                    ->label('Deskripsaun')
                     ->wrap(),   
             ])
             ->filters([
@@ -41,9 +60,15 @@ class IncomingMailsTable
             ->recordActions([
                 EditAction::make(),
             ])
+            ->headerActions([
+            ExportAction::make()
+                ->exporter(IncomingMailExporter::class),
+            ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    ExportAction::make()
+                        ->exporter(IncomingMailExporter::class)
                 ]),
             ]);
     }

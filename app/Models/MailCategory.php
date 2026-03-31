@@ -12,4 +12,8 @@ class MailCategory extends Model
     public function incomingMails(): HasMany {
         return $this->hasMany(IncomingMail::class, 'mail_category_id');
     }
+
+    public function outgoingMails(): HasMany {
+        return $this->hasMany(OutgoingMail::class, 'mail_category_id');
+    }
 }
