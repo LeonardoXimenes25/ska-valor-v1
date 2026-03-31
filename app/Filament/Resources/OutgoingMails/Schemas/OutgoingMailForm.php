@@ -36,8 +36,7 @@ class OutgoingMailForm
                     ->required(),
 
                 TextInput::make('description')
-                    ->label('Deskripsaun')
-                    ->required(),
+                    ->label('Deskripsaun'),
                 
                 FileUpload::make('attachment')
                     ->disk('public')
