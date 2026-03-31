@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('attachment')->nullable();
             $table->text('description')->nullable();
             $table->enum('status', ['draft', 'published', 'archieved'])->default('draft');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

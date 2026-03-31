@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('received_date');
             $table->string('attachment')->nullable();
             $table->text('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

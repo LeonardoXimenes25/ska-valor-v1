@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('instructions');
             $table->enum('status', ['pending', 'completed', 'processed'])->default('pending');
             $table->date('due_date');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 #[Fillable([
     'mail_category_id', 
@@ -19,6 +20,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class IncomingMail extends Model
 {
+    use SoftDeletes;
+    
     public function category(): BelongsTo {
         return $this->belongsto(MailCategory::class, 'mail_category_id');
     }
