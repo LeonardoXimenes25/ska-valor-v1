@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -15,9 +16,14 @@ class TeachersTable
     {
         return $table
             ->columns([
-                TextColumn::make('teacher_id'),
+                TextColumn::make('teacher_code')
+                    ->label('Kodigu'),
+
+                ImageColumn::make('image')
+                    ->label('Imajen')
+                    ->circular(),
                 
-                TextColumn::make('name')
+                TextColumn::make('full_name')
                     ->label('Naran')
                     ->sortable()
                     ->searchable(),
@@ -33,6 +39,34 @@ class TeachersTable
                 TextColumn::make('address')
                     ->label('Hela-Fatin')
                     ->wrap(),
+                
+                TextColumn::make('phone')
+                    ->label('Nu. Telemovel')
+                    ->wrap(),
+
+                TextColumn::make('bio')
+                    ->label('Bio')
+                    ->wrap(),
+
+                TextColumn::make('institution_name')
+                    ->label('Universidade/Instituisaun'),
+
+                TextColumn::make('major')
+                    ->label('Major'),
+
+                TextColumn::make('degree_level')
+                    ->label('Nivel Edukasaun'),
+
+                TextColumn::make('graduation_year')
+                    ->label('Tinan Graduasaun')
+                    ->wrap(),
+                
+                TextColumn::make('is_active')
+                    ->label('Observasaun')
+                    ->badge()
+                    ->formatStateUsing(fn ($state) => $state ? 'Active' : 'Tidak Active')
+                    ->color(fn ($state) => $state ? 'success' : 'danger'),
+
             ])
             ->filters([
                 //

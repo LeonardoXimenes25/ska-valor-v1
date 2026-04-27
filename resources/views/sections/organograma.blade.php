@@ -1,6 +1,11 @@
-<div class="container">
+@extends('layouts.app')
+
+@section('title', 'Organograma SKA VALOR')
+
+@section('content')
+    <div class="container">
     <div class="header-title">
-        <h1 class="fw-bold text-center">Organograma SKA VALOR</h1>
+        <h1 class="fw-bold text-center text-uppercase">organograma ska valor</h1>
         <p class="text-muted lead text-center">Periode 2026 - 2031</p>
     </div>
 
@@ -60,19 +65,21 @@
                 <div class="profile-img-wrapper">
                     <i class="bi bi-person-fill profile-placeholder"></i>
                 </div>
-                <span class="role-badge level-komisi">Komisi 1</span>
+                <span class="role-badge level-komisi">Coordenador Programa do Ensino Aprendizajen</span>
                 <span class="role-name">Internal</span>
-                <span class="person-name">Nama Anggota</span>
+                <span class="person-name">Adriano da Cruz</span>
             </div>
             <div class="org-card">
                 <div class="profile-img-wrapper">
                     <i class="bi bi-person-fill profile-placeholder"></i>
                 </div>
-                <span class="role-badge level-komisi">Komisi 2</span>
+                <span class="role-badge level-komisi">Coordenador Programa Comunitaria</span>
                 <span class="role-name">Eksternal</span>
-                <span class="person-name">Nama Anggota</span>
+                <span class="person-name">Henrique da Cruz</span>
             </div>
         </div>
 
     </div>
 </div>
+@endsection
+

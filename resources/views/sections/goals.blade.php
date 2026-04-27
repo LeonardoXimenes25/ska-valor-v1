@@ -1,4 +1,4 @@
- <section class="py-5 bg-light" id="goals">
+<section class="py-5 bg-light" id="goals">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Se maka  ami ajuda?</h2>

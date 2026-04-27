@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateProgramCategory extends CreateRecord
 {
     protected static string $resource = ProgramCategoryResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

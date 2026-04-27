@@ -13,10 +13,14 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class ProgramCategoryResource extends Resource
 {
     protected static ?string $model = ProgramCategory::class;
+
+    protected static ?string $navigationLabel = 'Kategoria';
+    protected static string | UnitEnum | null $navigationGroup = 'Programa Edukasaun';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

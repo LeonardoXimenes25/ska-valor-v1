@@ -13,10 +13,14 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class TeacherResource extends Resource
 {
     protected static ?string $model = Teacher::class;
+    
+    protected static ?string $navigationLabel = 'Formador';
+    protected static string | UnitEnum | null $navigationGroup = 'Manajementu Utilizador';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

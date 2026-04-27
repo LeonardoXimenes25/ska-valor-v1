@@ -21,4 +21,9 @@ class ProgramCategory extends Model
     {
         return $this->hasMany(Module::class);
     }
+
+    public function students(): HasMany
+    {
+        return $this->hasMany(Student::class, 'program_category_id');
+    }
 }

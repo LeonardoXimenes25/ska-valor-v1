@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
     <section class="py-5 bg-light" style="min-height: 100vh">

@@ -1,0 +1,116 @@
+{
+    "Lautem": {
+        "Iliomar": {
+            "Aelebere": ["Heitali", "Lalumatu", "Leilor", "Marafal"],
+            "Cainlio": [
+                "Caidawalarim",
+                "Larimi",
+                "Liufalun",
+                "Maluhira",
+                "Titirawein"
+            ],
+            "Fuat": ["Acadirulo", "Rumutau", "Vataomar"],
+            "Iliomar I": [
+                "Ara’ara",
+                "Caentau",
+                "Iliomar",
+                "Ossohira",
+                "Vatamatar"
+            ],
+            "Iliomar II": ["Acara", "Boquila", "Caidabu", "Lihina", "Madarira"],
+            "Tirilolo": ["Etevata", "Tatalalarin", "Tirilolo"]
+        },
+        "Lore": {
+            "Lore I": ["Horolata", "Maloru", "Otcho-Tchau", "Tchai", "Vailana"],
+            "Lore II": ["Haitupuca", "Ililapa", "Nuhalata"]
+        },
+        "Luro": {
+            "Afabubo": ["Dalari", "Zefaliu"],
+            "Baricafa": ["Afaia", "Saelari", "Ussufasu"],
+            "Kotamuto": ["Buanomar", "Ouroma", "Etanice"],
+            "Lacava": ["Afabubu"],
+            "Luro": ["Abere", "Alaira", "Amaira", "Ailarino", "Vatalarino"],
+            "Wairoque": ["Afanami", "Iuto", "Liarafa", "Luturo", "Soba"]
+        },
+        "Lospalos": {
+            "Bauro": ["Bauro", "Iralafai", "Luirai", "Sepelata", "Somocho"],
+            "Cacavei": ["Laiara", "Paihira", "Solepara", "Tcharano"],
+            "Fuiloro": [
+                "Asalaino",
+                "Bemoris",
+                "Central",
+                "Culuhun",
+                "Ira-Ara",
+                "Lereloho",
+                "Lospala",
+                "Nakroman",
+                "Tchauluturo",
+                "Titilari",
+                "30 de Agostu"
+            ],
+            "Home": ["Larinacha", "Lilapuhu", "Reisoru", "Tchenuluro"],
+            "Leuro": ["Leuro", "Luturula", "Sorumoco", "Tcharano"],
+            "Muapitine": [
+                "Malahara",
+                "Muapitine",
+                "Lupuloho",
+                "Pehefitu",
+                "Vailoro"
+            ],
+            "Raca": ["Maulo'o", "Raca", "Tchailoro"],
+            "Souru": [
+                "Foema'a",
+                "Louro",
+                "Nairete",
+                "Nanacuro",
+                "Omucano",
+                "Sorulua",
+                "Tcaivatcha"
+            ]
+        },
+        "Lautem": {
+            "Baduro": [
+                "Irapala",
+                "Laculo Mano",
+                "Luadau",
+                "Malailada",
+                "Tamaro"
+            ],
+            "Com": [
+                "Etipiti",
+                "Ira’ono",
+                "Lohomato",
+                "Maupuso",
+                "Pitileti",
+                "Vailovaia"
+            ],
+            "Daudere": [
+                "Aelafa",
+                "Anarua",
+                "Macalodo",
+                "Nassuloi",
+                "Sagueli",
+                "Samalari",
+                "Uanambere",
+                "Vassatoi"
+            ],
+            "Euquisi": ["Barlio", "Barubato", "Vaniria"],
+            "Ililai": ["Samalari", "Titilari"],
+            "Maina I": [
+                "Daulutoro",
+                "Mauvedara",
+                "Narunteiro",
+                "Paiahara",
+                "Soloresi"
+            ],
+            "Maina II": ["Codo", "Lereado", "Lereira", "Oirata", "Quedoloro"],
+            "Pairara": ["Caporo", "Ira-Tehau", "Lenovo", "Puno"],
+            "Parlamento": ["Iparira", "Ira’Ara", "Iaiara", "Moro", "Soiquili"],
+            "Serelau": ["Adavari", "Poruvari", "Ra’ano"]
+        },
+        "Tutuala": {
+            "Mehara": ["Porlamano", "Poros", "Loiquero"],
+            "Tutuala": ["Tchailoro", "Vero", "Pitileti", "Loro"]
+        }
+    }
+}

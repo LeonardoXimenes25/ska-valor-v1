@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('program_name');
-            $table->string('sub-category')->nullable();
+            $table->string('sub_category')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_active')->default(true);
             $table->foreignId('program_category_id')->constrained('program_categories')->onDelete('cascade');

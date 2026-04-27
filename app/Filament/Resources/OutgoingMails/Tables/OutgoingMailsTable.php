@@ -46,31 +46,21 @@ class OutgoingMailsTable
                     ->searchable(),
                 
                 TextColumn::make('attachment')
-    ->label('Dokumentus')
-    // 1. Logika Teks
-    ->formatStateUsing(fn ($state) => $state ? 'Haree PDF' : 'La iha file')
-    
-    // 2. Logika Badge & Warna
-    ->badge()
-    ->color(fn ($state) => $state ? 'primary' : 'gray')
-    
-    // 3. Logika Icon
-    ->icon(fn ($state) => $state ? 'heroicon-s-document-text' : 'heroicon-o-x-circle')
-    ->iconColor(fn ($state) => $state ? 'danger' : 'gray')
-    
-    // 4. LOGIKA URL (Kunci Perbaikan)
-    // Jika $state null, kita return null agar tidak menjadi link
-    ->url(function ($state) {
-        if (!$state) {
-            return null; 
-        }
-        return asset('storage/' . $state);
-    }, shouldOpenInNewTab: true)
-    
-    // 5. Mencegah Hover Effect jika tidak ada file
-    ->extraAttributes(fn ($state) => [
-        'style' => $state ? '' : 'pointer-events: none; cursor: default;',
-    ]),
+                    ->label('Dokumentus')
+                    ->formatStateUsing(fn ($state) => $state ? 'Haree PDF' : 'La iha file') // 1. Logika Teks
+                    ->badge() // 2. Logika Badge & Warna
+                    ->color(fn ($state) => $state ? 'primary' : 'gray')
+                    ->icon(fn ($state) => $state ? 'heroicon-s-document-text' : 'heroicon-o-x-circle')  // 3. Logika Icon
+                    ->iconColor(fn ($state) => $state ? 'danger' : 'gray') // 4. LOGIKA URL (Kunci Perbaikan)
+                    ->url(function ($state) {
+                        if (!$state) {
+                            return null; 
+                        }
+                        return asset('storage/' . $state);
+                    }, shouldOpenInNewTab: true)
+                    ->extraAttributes(fn ($state) => [
+                        'style' => $state ? '' : 'pointer-events: none; cursor: default;',
+                    ]),
 
                 TextColumn::make('description')
                     ->label('Deskripsaun')
