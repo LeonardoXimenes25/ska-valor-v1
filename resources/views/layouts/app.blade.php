@@ -19,18 +19,15 @@
 </head>
 <body>
     <!-- Navigation start -->
-    @include('partials.navbar')
+    {{-- @include('partials.navbar') --}}
+    <x-navbar/>
     {{-- navigation end --}}
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <main>
-            @yield('content')
-        </main> 
-    </section>
+    {{ $slot }}
 
     <!-- Footer start -->
-    @include('partials.footer')
+    <x-footer/>
     {{-- footer end --}}
     
     {{-- livewire js --}}

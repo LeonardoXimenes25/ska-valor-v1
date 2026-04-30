@@ -1,9 +1,4 @@
-@extends('layouts.app')
-
-@section('title', 'Organograma SKA VALOR')
-
-@section('content')
-    <div class="container">
+<div class="container mt-5 pt-5">
     <div class="header-title">
         <h1 class="fw-bold text-center text-uppercase">organograma ska valor</h1>
         <p class="text-muted lead text-center">Periode 2026 - 2031</p>
@@ -81,5 +76,3 @@
 
     </div>
 </div>
-@endsection
-

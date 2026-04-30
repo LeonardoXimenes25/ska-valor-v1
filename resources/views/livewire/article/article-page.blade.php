@@ -1,5 +1,4 @@
-<div>
-    <div id="list-view">
+<div id="list-view" class="article-page pt-5 mt-5">
         <header class="container py-5 text-center">
             <h2 class="display-5 fw-bold mb-3 text-dark">Informasi Terkini & Terpercaya</h2>
             <p class="text-muted mx-auto lead" style="max-width: 700px;">Temukan artikel menarik seputar teknologi, kesehatan, dan gaya hidup setiap harinya hanya di portal kami.</p>
@@ -8,17 +7,14 @@
         <main class="container pb-5">
             <div class="row g-4" id="article-container">
                 <!-- Contoh Struktur yang bisa di-looping Laravel nantinya -->
-                @foreach($articles as $article) 
+                @foreach($articles as $article)
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card h-100">
-                        <img src="{{ $article->image ? asset('storage/' . $article->image) : 'https://via.placeholder.com/300' }}" 
-                            class="card-img-top" 
-                            alt="{{ $article->title }}"
-                        >
+                        <img src="{{asset('storage/' . $article->image)}}" class="card-img-top" alt="{{$article->title}}">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge badge-category rounded-pill">{{ optional($article->articleCategory)->name ?? 'Tidak ada kategori' }}</span>
-                                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>{{ $article->published_at ? $article->published_at->format('d-m-Y') : '-' }}</small>
+                                <span class="badge badge-category rounded-pill">{{$article->articleCategory->name}}</span>
+                                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>{{$article->published_at->format('d-m-Y')}}</small>
                             </div>
                             <h5 class="card-title fw-bold mb-3">{{$article->title}}</h5>
                             <p class="card-text text-muted small line-clamp-3 mb-4">{{$article->excerpt}}</p>
@@ -33,15 +29,10 @@
                 </div>
                 @endforeach
             </div>
-
-            {{-- pagination --}}
-            <div class="mt-5 d-flex justify-content-center">
-                {{ $articles->links() }}
-            </div>
         </main>
+    </div>
 
-    {{-- css --}}
-    @push('styles')
+@push('styles')
         <style>
         .card {
             border: none;
@@ -125,5 +116,3 @@
         }
 </style>
     @endpush
-</div>
-</div>

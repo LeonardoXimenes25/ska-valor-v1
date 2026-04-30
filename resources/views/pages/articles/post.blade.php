@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title', 'Portal Informasaun')
 
@@ -35,7 +35,7 @@
     @endforeach
 
     {{-- pagination --}}
-    {{ $this->posts->links() }}
+    {{-- {{ $this->posts->links() }} --}}
 @endsection
 
     {{-- css --}}

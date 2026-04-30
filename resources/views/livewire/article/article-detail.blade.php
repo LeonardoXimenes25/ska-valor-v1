@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@section('title', 'Detail Informasaun')
-
-@section('content')
+<div>
     <header class="article-header">
         <div class="container">
             <nav aria-label="breadcrumb">
@@ -138,7 +134,7 @@
             </div>
         </div>
     </main>
-@endsection
+</div>
 
 @push('styles')
     <style>

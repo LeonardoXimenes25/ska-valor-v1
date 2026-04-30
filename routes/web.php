@@ -1,22 +1,25 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
-use App\Livewire\ArticleIndex;
-use App\Livewire\ArticleShow;
+use App\Livewire\Article\ArticleDetail;
+use App\Livewire\Article\ArticlePage;
+use App\Livewire\Home;
+use App\Livewire\Section\Organograma;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Socialite;
 
 Route::redirect('/', '/home');
 
-Route::get('/home', function () {
-    return view('pages.home');
-})->name('home');
+// Route::get('/home', function () {
+//     return view('pages.home');
+// })->name('home');
+Route::get('/home', Home::class)->name('home');
+
 
 // list student
 Route::get('/lista-estudante', [StudentController::class, 'index'])->name('list-student');
@@ -31,8 +34,8 @@ Route::get('/lista-professor', [TeacherController::class, 'index'])->name('list-
 // Article
 // Route::get('/article', [ArticleController::class, 'index'])->name('article');
 // Route::get('/detail-article/{slug}', [ArticleController::class, 'show'])->name('detail-article');
-Route::get('/article', ArticleIndex::class)->name('article');
-Route::get('/detail-article/{slug}', ArticleShow::class)->name('detail-article');
+Route::get('/article', ArticlePage::class)->name('article');
+Route::get('/detail-article/{slug}', ArticleDetail::class)->name('detail-article');
 
 // laravel socialite
 // google
@@ -58,6 +61,4 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // static route
-Route::get('/sections/organograma', function () {
-    return view('sections.organograma');
-})->name('organograma');
+Route::get('/Organograma', Organograma::class)->name('organograma');

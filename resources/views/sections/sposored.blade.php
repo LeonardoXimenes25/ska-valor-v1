@@ -2,8 +2,8 @@
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
-                    <span class="header-badge">Kemitraan Global</span>
-                    <h2 class="main-title">Dipercaya oleh perusahaan teknologi terkemuka di dunia</h2>
+                    <span class="header-badge">Parseiria Servisu</span>
+                    <h2 class="main-title">Hetan konfiasa servisu husi Instituisaun Governamental no non Governamental</h2>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
         </div>
 
         <!-- Section Statistik Tambahan -->
-        <div class="container stats-box">
+        {{-- <div class="container stats-box">
             <div class="row text-center g-4">
                 <div class="col-md-4">
                     <span class="stat-number">500+</span>
@@ -44,5 +44,5 @@
                     <span class="stat-label">Negara Terjangkau</span>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>

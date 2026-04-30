@@ -1,7 +1,7 @@
 <section class="py-5" id="program">
     <div class="container py-5">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Program Unggulan</h2>
+            <h2 class="fw-bold">Programa Prinsipal</h2>
             <p class="text-secondary">Kurikulum praktis yang dirancang untuk kebutuhan masa kini.</p>
         </div>
         <div class="row g-4">
@@ -57,6 +57,10 @@
                         <div class="col-4 text-center">
                             <div class="p-2 border rounded-3 mb-1 bg-light">🇬🇧</div>
                             <span class="small fw-bold">Inggris</span>
+                        </div>
+                        <div class="col-4 text-center">
+                            <div class="p-2 border rounded-3 mb-1 bg-light">EK</div>
+                            <span class="small fw-bold">Ekivalensia</span>
                         </div>
                     </div>
                     <hr>
