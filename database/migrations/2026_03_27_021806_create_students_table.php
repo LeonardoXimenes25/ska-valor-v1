@@ -33,11 +33,6 @@ return new class extends Migration
             
             $table->string('image')->nullable(); 
             
-            /**
-             * REKOMENDASI:
-             * 'status' untuk detail administratif (Active, Dropout, Alumni).
-             * 'is_active' untuk kontrol akses sistem secara global (True/False).
-             */
             $table->enum('status', ['active', 'dropout', 'alumni'])->default('active');
             $table->boolean('is_active')->default(true); // Memudahkan query: where('is_active', true)
             

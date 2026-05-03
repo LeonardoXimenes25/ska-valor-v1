@@ -14,10 +14,24 @@ class ModulesTable
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
-                TextColumn::make('subject'),
-                TextColumn::make('description'),
-                TextColumn::make('file_path'),
+                TextColumn::make('title')
+                    ->label('Titulu'),
+
+                TextColumn::make('subject')
+                    ->label('Materia'),
+
+                TextColumn::make('description')
+                    ->label('Deskripsaun'),
+
+                TextColumn::make('file_path')
+                    ->label('Dokumentus')
+                    ->icon('heroicon-s-document-text')
+                    ->iconColor('danger')
+                    ->color('primary')
+                    ->formatStateUsing(fn () => 'Haree PDF') // Mengubah tulisan path menjadi teks statis
+                    ->url(fn ($record) => asset('storage/' . $record->module), true) // Klik untuk buka di tab baru
+                    ->badge(), 
+
                 TextColumn::make('programCategory.name')
                     ->label('Kategoria'),
             ])

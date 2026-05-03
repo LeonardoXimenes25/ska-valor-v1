@@ -37,6 +37,8 @@ class StudentForm
                     ]),
 
                 DatePicker::make('date_of_birth')
+                    ->seconds(false)
+                    ->format('d/m/Y')
                     ->label('Data Moris')
                     ->required(),
 

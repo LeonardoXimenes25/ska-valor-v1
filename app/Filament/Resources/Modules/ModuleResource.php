@@ -18,8 +18,8 @@ use UnitEnum;
 class ModuleResource extends Resource
 {
     protected static ?string $model = Module::class;
-    protected static ?string $navigationLabel = 'Materia';
-    protected static string | UnitEnum | null $navigationGroup = 'Programa Edukasaun';
+    protected static ?string $navigationLabel = 'Modul';
+    protected static string | UnitEnum | null $navigationGroup = 'E-Learning';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

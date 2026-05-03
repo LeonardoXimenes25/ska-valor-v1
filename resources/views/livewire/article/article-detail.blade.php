@@ -1,4 +1,4 @@
-<div>
+<div class="article-detail mt-2 pt-5">
     <header class="article-header">
         <div class="container">
             <nav aria-label="breadcrumb">
@@ -11,7 +11,7 @@
             
             <div class="row">
                 <div class="col-lg-8">
-                    <a href="#" class="category-badge mb-3 d-inline-block">{{$article->articleCategory->name}}</a>
+                    <a href="#" class="category-badge mb-3 d-inline-block bg-{{ $article->articleCategory->color_class }}">{{$article->articleCategory->name}}</a>
                     <h1 class="display-4 mb-4">{{$article->title}}</h1>
                     <div class="d-flex align-items-center mb-4 text-muted">
                         <img src="https://i.pravatar.cc/150?u=johndoe" alt="Author" class="rounded-circle me-2" width="40">
@@ -29,7 +29,7 @@
             <!-- Main Content Area -->
             <div class="col-lg-8">
                 <article class="article-content">
-                    <img src="{{asset('storage/' . $article->image)}}" alt="AI Technology Visualization" class="shadow-sm">
+                    <img src="{{asset('storage/' . $article->image)}}" alt="AI Technology Visualization" class="shadow-sm" loading="lazy">
 
                     {!!$article->content!!}
                     
@@ -87,41 +87,19 @@
                     </div>
 
                     <!-- Top Articles Widget -->
-                    <div class="card sidebar-card p-4">
-                        <h5 class="mb-4 fw-bold">Top Articles</h5>
-                        
-                        <a href="#" class="top-article-item">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=200" alt="Post 1" class="top-article-img">
-                            <div>
-                                <h6 class="mb-1 fw-bold lh-sm">10 Gadget Terbaik yang Wajib Dimiliki Tahun Ini</h6>
-                                <small class="text-muted">15 Mei 2024</small>
-                            </div>
-                        </a>
-
-                        <a href="#" class="top-article-item">
-                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200" alt="Post 2" class="top-article-img">
-                            <div>
-                                <h6 class="mb-1 fw-bold lh-sm">Cara Melindungi Data Pribadi di Era Digital</h6>
-                                <small class="text-muted">12 Mei 2024</small>
-                            </div>
-                        </a>
-
-                        <a href="#" class="top-article-item">
-                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200" alt="Post 3" class="top-article-img">
-                            <div>
-                                <h6 class="mb-1 fw-bold lh-sm">Robotika: Membantu atau Menggantikan Manusia?</h6>
-                                <small class="text-muted">10 Mei 2024</small>
-                            </div>
-                        </a>
-
-                        <a href="#" class="top-article-item mb-0">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200" alt="Post 4" class="top-article-img">
-                            <div>
-                                <h6 class="mb-1 fw-bold lh-sm">Eksplorasi Ruang Angkasa dengan Teknologi Terbaru</h6>
-                                <small class="text-muted">08 Mei 2024</small>
-                            </div>
-                        </a>
-                    </div>
+                @foreach ($topArticles as $top)
+                <div class="card sidebar-card p-4">
+                    <h5 class="mb-4 fw-bold">Top Articles</h5>
+                    
+                    <a href="#" class="top-article-item">
+                        <img src="{{$top->image}}" alt="{{$top->title}}" class="top-article-img" loading="lazy">
+                        <div>
+                            <h6 class="mb-1 fw-bold lh-sm">{{$top->title}}</h6>
+                            <small class="text-muted">{{$top->published_at->format('d-m-Y')}}</small>
+                        </div>
+                    </a>
+                </div>
+                @endforeach
 
                     <!-- Newsletter Widget -->
                     <div class="card sidebar-card p-4 bg-primary text-white border-0">

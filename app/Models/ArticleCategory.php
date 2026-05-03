@@ -13,5 +13,17 @@ class ArticleCategory extends Model
     public function articles(): HasMany
     {
         return $this->hasMany(Article::class, 'category_id');
-    }   
+    }
+    
+    public function getColorClassAttribute()
+    {
+        return match ($this->slug) {
+            'komputer' => 'primary',
+            'inggris' => 'success',
+            'jepang' => 'danger',
+            'korea' => 'info',
+            'ekivalensia' => 'warning',
+            default => 'secondary',
+        };
+    }
 }

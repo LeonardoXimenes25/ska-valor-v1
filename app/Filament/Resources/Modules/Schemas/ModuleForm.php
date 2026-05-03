@@ -16,14 +16,21 @@ class ModuleForm
             ->components([
                 TextInput::make('title')
                     ->label('Título'),
+
                 TextInput::make('subject')
-                    ->label('Assunto'),
+                    ->label('Materia'),
+
                 TextInput::make('description')
                     ->label('Descrição'),
+
                 Select::make('program_category_id')
-                    ->label('Categoria')    
+                    ->label('kategoria')    
                     ->options(ProgramCategory::query()->pluck('name', 'id')),
-                FileUpload::make('file_path'),
+
+                FileUpload::make('file_path')
+                    ->directory('module')
+                    ->disk('public')
+                    ->label('Documentu'),
             ]);
     }
 }

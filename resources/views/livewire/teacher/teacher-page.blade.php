@@ -1,9 +1,4 @@
-@extends('layout.app')
-
-@section('title', 'Lista Formadores')
-
-@section('content')
-    <!-- Header -->
+<div class="container mt-5 pt-5" style="min-height: 100vh">
     <header class="header-section text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Lista Formadores SKA VALOR</h1>
@@ -105,29 +100,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const teacherModal = document.getElementById('teacherModal');
-            if (teacherModal) {
-                teacherModal.addEventListener('show.bs.modal', function (event) {
-                    const button = event.relatedTarget;
-                    
-                    // Ambil data dari atribut data-*
-                    const name = button.getAttribute('data-name');
-                    const dept = button.getAttribute('data-dept');
-                    const bio = button.getAttribute('data-bio');
-                    const edu = button.getAttribute('data-edu');
-                    const inst = button.getAttribute('data-inst');
-
-                    // Isi konten modal
-                    teacherModal.querySelector('#modalName').textContent = name;
-                    teacherModal.querySelector('#modalDept').textContent = dept;
-                    teacherModal.querySelector('#modalBio').textContent = bio;
-                    teacherModal.querySelector('#modalInst').textContent = inst;
-                    teacherModal.querySelector('#modalEdu').textContent = edu;
-                });
-            }
-        });
-    </script>
-@endsection
+</div>

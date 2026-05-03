@@ -10,18 +10,20 @@
                 @foreach($articles as $article)
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card h-100">
-                        <img src="{{asset('storage/' . $article->image)}}" class="card-img-top" alt="{{$article->title}}">
+                        <img src="{{asset('storage/' . $article->image)}}" class="card-img-top" alt="{{$article->title}}" loading="lazy">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="badge badge-category rounded-pill">{{$article->articleCategory->name}}</span>
-                                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>{{$article->published_at->format('d-m-Y')}}</small>
+                                <span class="badge rounded-pill bg-{{ $article->articleCategory->color_class }}">
+                                    {{$article->articleCategory->name}}
+                                </span>
+                                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>{{$article->published_at->diffForHumans()}}</small>
                             </div>
                             <h5 class="card-title fw-bold mb-3">{{$article->title}}</h5>
                             <p class="card-text text-muted small line-clamp-3 mb-4">{{$article->excerpt}}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-secondary fw-medium">Oleh: Budi Santoso</small>
                                 <span class="text-primary fw-bold small">
-                                    <a href="{{route('detail-article', $article->slug)}}">Baca</a> <i class="fas fa-chevron-right ms-1" style="font-size: 0.7rem;"></i>
+                                    <a href="{{route('detail-article', $article->slug)}}" wire:navigate.hover class="text-decoration-none">Lee Detailu</a> <i class="fas fa-chevron-right ms-1" style="font-size: 0.7rem;"></i>
                                 </span>
                             </div>
                         </div>

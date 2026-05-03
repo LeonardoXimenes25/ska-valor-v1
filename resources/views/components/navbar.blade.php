@@ -21,7 +21,7 @@
                 <li class="nav-item"><a class="nav-link" href="#goals">Objetivu</a></li>
                 <li class="nav-item"><a class="nav-link" href="#program">Programa</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('article')}}">Portal Informasaun</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('module') }}">Materia</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('list-lesson') }}">Materia</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">

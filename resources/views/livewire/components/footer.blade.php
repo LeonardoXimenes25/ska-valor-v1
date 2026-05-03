@@ -1,4 +1,5 @@
-<footer id="kontak">
+<div class="foooterPage mt-5 pt-5">
+    <footer id="kontak">
     <div class="container">
         {{-- footer information--}}
         <div class="row g-5">
@@ -8,7 +9,7 @@
 
                 {{-- another link --}}
                 <nav class="nav flex-column">
-                    <a class="nav-link text-white" href="{{route('organograma')}}">Organograma</a>
+                    <a class="nav-link text-white" href="{{route('organograma')}}" wire:navigate.hover>Organograma</a>
                     <a class="nav-link" href="#">Link</a>
                     <a class="nav-link" href="#">Link</a>
                     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -41,3 +42,4 @@
         <p class="text-center small py-3 opacity-50">&copy; {{date('Y')}} Sentru Visaun no Asaun Lautem Oan Rasik | Lori Lautem no Timor Leste ba Mundu.</p>
     </div>
 </footer>
+</div>

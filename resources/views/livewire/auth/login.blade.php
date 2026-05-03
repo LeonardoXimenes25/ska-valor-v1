@@ -1,7 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+<div>
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
     <div class="login-card">
         <div class="login-header">
             <div class="logo-icon">
@@ -12,15 +10,14 @@
         </div>
 
         <div class="form-section">
-            <form method="POST" action="{{ url('/login') }}">
+            <form wire:submit="login">
                 @csrf
 
-                {{-- 🔥 ERROR MESSAGE --}}
-                @error('email')
+                @if (session()->has('error'))
                     <div class="alert alert-danger">
-                        {{ $message }}
+                        {{ session('error') }}
                     </div>
-                @enderror
+                @endif
 
                 {{-- EMAIL --}}
                 <div class="mb-3">
@@ -32,9 +29,10 @@
                             name="email" 
                             class="form-control" 
                             placeholder="email@example.com"
-                            value="{{ old('email') }}"
+                            wire:model="email"
                             required
                         >
+                        <div>@error('email') {{ $message }} @enderror</div>
                     </div>
                 </div>
 
@@ -53,7 +51,8 @@
                             name="password" 
                             id="passwordField" 
                             class="form-control" 
-                            placeholder="••••••••" 
+                            placeholder="••••••••"
+                            wire:model="password" 
                             required
                         >
                         <button 
@@ -83,7 +82,7 @@
 
                 {{-- SOCIAL LOGIN (optional) --}}
                 <div class="social-login mb-4">
-                    <a href="{{ route('auth.google') }}" class="btn-social"><i class="bi bi-google"></i></a>
+                    <a href="{{ route('auth.google') }}" class="btn-social" wire:click="loginWithGoogle"><i class="bi bi-google"></i></a>
                     <a href="#" class="btn-social"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="btn-social"><i class="bi bi-apple"></i></a>
                 </div>
@@ -114,4 +113,4 @@ function togglePassword() {
     }
 }
 </script>
-@endsection
+</div>

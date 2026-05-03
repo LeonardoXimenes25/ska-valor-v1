@@ -8,20 +8,16 @@ use Livewire\Component;
 class ArticleDetail extends Component
 {
     public $article;
-    protected $articleService;
 
-    public function boot(ArticleService $articleService)
-    {
-        $this->articleService = $articleService;
-    }
-
-    public function mount($slug)
-    {
-        $this->article = $this->articleService->getArticleBySlug($slug);
+    public function mount(ArticleService $articleService, $slug){
+        $this->article = $articleService->getArticleBySlug($slug);
     }
     
-    public function render()
+    public function render(ArticleService $articleService)
     {
-        return view('livewire.article.article-detail');
+        return view('livewire.article.article-detail', [
+            'article' => $this->article,
+            'topArticles' => $articleService->topArticles(),
+        ]);
     }
 }

@@ -33,7 +33,7 @@ class ProgramsTable
                 TextColumn::make('description')
                     ->label('Deskripasaun'),
                 TextColumn::make('is_active')
-                    ->label('Ativu')
+                    ->label('Observasaun')
                     ->searchable()
                     ->sortable(),
             ])

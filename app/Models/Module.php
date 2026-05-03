@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 #[Fillable(['title', 'subject', 'description', 'file_path', 'program_category_id'])]
 
@@ -13,4 +14,5 @@ class Module extends Model
     {
         return $this->belongsTo(ProgramCategory::class, 'program_category_id');
     }
+
 }

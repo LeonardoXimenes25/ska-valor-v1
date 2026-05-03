@@ -7,17 +7,11 @@ use Livewire\Component;
 
 class ArticlePage extends Component
 {
-    protected $articleService;
-
-    public function boot(ArticleService $articleService)
+    public function render(ArticleService $articleService)
     {
-        $this->articleService = $articleService;
-    }
-
-    public function render()
-    {
-        $articles = $this->articleService->getAllArticles();
-        return view('livewire.article.article-page', compact('articles'))
-            ->layout('layouts.app');
+    return view('livewire.article.article-page', [
+        'articles' => $articleService->getAllArticles(),
+        'categories' => $articleService->categories(),
+    ])->layout('layouts.app');
     }
 }

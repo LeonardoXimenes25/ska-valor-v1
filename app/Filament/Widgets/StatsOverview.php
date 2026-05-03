@@ -2,8 +2,12 @@
 
 namespace App\Filament\Widgets;
 
+use App\Filament\Resources\IncomingMails\IncomingMailResource;
+use App\Filament\Resources\OutgoingMails\OutgoingMailResource;
 use App\Filament\Resources\Students\StudentResource;
 use App\Filament\Resources\Teachers\TeacherResource;
+use App\Models\IncomingMail;
+use App\Models\OutgoingMail;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -20,8 +24,13 @@ class StatsOverview extends StatsOverviewWidget
                 ->url(StudentResource::getUrl('index'))
                 ->color('success'),
 
-            Stat::make('Bounce rate', '21%'),
-            Stat::make('Average time on page', '3:12'),
+            Stat::make('Karta Tama', IncomingMail::getModel()::count())
+                ->url(IncomingMailResource::getUrl('index'))
+                ->color('danger'),
+
+            Stat::make('Karta sai', OutgoingMail::getModel()::count())
+                ->url(OutgoingMailResource::getUrl('index'))
+                ->color('warning'),
         ];
     }
 }

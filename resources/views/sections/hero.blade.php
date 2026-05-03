@@ -16,7 +16,12 @@
 
         {{-- image --}}
         <div class="col-lg-5 d-none d-lg-block">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop" alt="Pendidikan Gratis" class="img-fluid rounded-5 shadow-lg">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1470&auto=format&fit=crop"
+                alt="Pendidikan Gratis"
+                class="img-fluid rounded-5 shadow-lg"
+                fetchpriority="high"
+                width="1470"
+                height="980">
         </div>
     </div>
 </div>

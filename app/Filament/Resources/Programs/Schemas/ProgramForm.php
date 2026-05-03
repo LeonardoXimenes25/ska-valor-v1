@@ -28,10 +28,10 @@ class ProgramForm
                     ->label('Sub-Kategoria'),
 
                 TextInput::make('description')
-                    ->label('Deskripasaun'),
+                    ->label('Deskrisaun'),
 
                 Toggle::make('is_active')
-                    ->label('Ativu'),
+                    ->label('Observasaun'),
             ]);
     }
 }

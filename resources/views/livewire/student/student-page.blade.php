@@ -1,31 +1,31 @@
-@extends('layouts.app')
+<div class="container mt-5 pt-5 vh-100">
+        <header class="text-center mb-1">
+            <h3 class="fw-bold text-">E-Student directory</h3>
+            <p class="lead">Kelola daftar siswa berdasarkan peminatan bahasa dan teknologi</p>
+        </header>
 
-@section('content')
-    <div class="container main-container">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-            <h3 class="fw-bold m-0">E-Student Directory</h3>
-            <p class="text-muted small m-0">Kelola daftar siswa berdasarkan peminatan bahasa dan teknologi</p>
-        </div>
-        <button class="btn btn-dark rounded-3 px-4 shadow-sm">
-            <i class="bi bi-plus-lg me-2"></i>Tambah Siswa
-        </button>
-    </div>
-
-    <!-- Search Section -->
-    <div class="search-bar shadow-sm">
-        <i class="bi bi-search text-muted"></i>
-        <input type="text" id="filterInput" placeholder="Cari berdasarkan nama, NISN, atau kelas...">
-    </div>
+        <!-- Search Section -->
+        <livewire:components.search-input 
+            model="App\Models\Student"
+            column="name"
+            placeholder="Search Student"
+        />
 
     <!-- Category Filter Tags -->
-    <div class="filter-tags" id="categoryFilters">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="komputer">Komputer</button>
-        <button class="filter-btn" data-filter="inggris">Inggris</button>
-        <button class="filter-btn" data-filter="jepang">Jepang</button>
-        <button class="filter-btn" data-filter="korea">Korea</button>
-        <button class="filter-btn" data-filter="ekivalensia">Ekivalensia</button>
+    <div class="filter-tags">
+        <button 
+            class="filter-btn {{ $selectedCategory == 'all' ? 'active' : '' }}"
+            wire:click="selectCategory('all')">
+            Semua
+        </button>
+
+        @foreach ($categories as $category)
+            <button 
+                class="filter-btn {{ $selectedCategory == $category->slug ? 'active' : '' }}"
+                wire:click="selectCategory('{{ $category->slug }}')">
+                {{ $category->name }}
+            </button>
+        @endforeach
     </div>
 
     <!-- List Section -->
@@ -57,7 +57,7 @@
                                 '{{$student->student_id}}', 
                                 '{{$student->status}}', 
                                 '{{$student->birth_place}}', '
-                                '{{$student->birth_date}}')">
+                                '{{ $student->birth_of_date ? $student->birth_of_date->format('d-m-Y') : '-' }}')">
                         Detail <i class="bi bi-chevron-right ms-1"></i>
                     </button>
                 </div>
@@ -107,5 +107,6 @@
     </div>
 </div>
 @endforeach
-@endsection
 
+{{ $students->links('pagination::bootstrap-5') }}
+</div>

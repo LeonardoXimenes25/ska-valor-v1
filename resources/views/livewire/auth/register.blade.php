@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<div>
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div class="signup-container my-5">
             <div class="signup-header mb-4 text-center">
@@ -9,7 +7,7 @@
             </div>
 
             <div class="form-section shadow p-4 bg-white rounded">
-                <form action="{{ route('auth.register') }}" method="POST" enctype="multipart/form-data">
+                <form enctype="multipart/form-data" wire:submit="save">
                     @csrf
                     <div class="row g-3">
                         <div class="col-md-12 mb-2">
@@ -18,11 +16,11 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" value="{{ old('email') }}" placeholder="example@gmail.com" required>
+                            <input type="email" wire:model="email" name="email" class="form-control"  placeholder="example@gmail.com" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Mínimu 6 karaktere" required>
+                            <input type="password"  wire:model="password" name="password" class="form-control" placeholder="Mínimu 6 karaktere" required>
                         </div>
 
                         <div class="col-md-12 mb-2 mt-4">
@@ -32,7 +30,7 @@
 
                         <div class="col-md-6">
                             <label class="form-label">Naran Kompletu</label>
-                            <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="Ez: Melsior Miranda Branco" required maxlength="60">
+                            <input type="text"  wire:model="name" name="name" class="form-control" placeholder="Melsior Miranda Branco" required maxlength="60">
                         </div>
 
                         <div class="col-md-6">
@@ -51,17 +49,17 @@
 
                         <div class="col-md-6">
                             <label class="form-label">Fatin Moris</label>
-                            <input type="text" name="place_of_birth" class="form-control" value="{{ old('place_of_birth') }}" placeholder="Ez. Lospalos" required>
+                            <input type="text"  wire:model="place_of_birth" name="place_of_birth" class="form-control" placeholder="Lospalos" required>
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label">Data Moris</label>
-                            <input type="date" name="date_of_birth" class="form-control" value="{{ old('date_of_birth') }}" required>
+                            <input type="date" wire:model="date_of_birth" name="date_of_birth" class="form-control" required>
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label">Hela Fatin</label>
-                            <textarea name="address" class="form-control" rows="2" placeholder="Alamat sesuai KTP/KK" required>{{ old('address') }}</textarea>
+                            <input type="text" wire:model="address" name="address" class="form-control" rows="2" placeholder="Villa Centro" required></input>
                         </div>
 
                         <div class="row">
@@ -263,5 +261,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 </script>
-    
-@endsection
+</div>

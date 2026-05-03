@@ -1,0 +1,645 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --primary-color: #0d6efd;
+    --accent-color: #198754;
+    --text-dark: #1e293b;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    font-family: "Poppins", "sans-serif";
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid #eee;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 140px 0 80px;
+    background: linear-gradient(rgba(13, 110, 253, 0.05), #ffffff);
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #e7f1ff;
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.1;
+
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Program Cards */
+.card-program {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.card-program:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Mission Section */
+.mission-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    border-left: 5px solid var(--primary-color);
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 80px 0 20px;
+}
+
+.footer-link {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+/* sponsored start */
+/* Container utama dengan gradien lembut */
+.sponsored-section {
+    padding: 100px 0;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(13, 110, 253, 0.05),
+            transparent
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(13, 110, 253, 0.05),
+            transparent
+        );
+}
+
+/* Badge kecil di atas judul */
+.header-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-title {
+    font-weight: 800;
+    color: #1a1d23;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+/* Container untuk Animasi Logo */
+.logos-wrapper {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+/* Efek memudar di sisi kiri dan kanan */
+.logos-wrapper::before,
+.logos-wrapper::after {
+    content: "";
+    height: 100%;
+    top: 0;
+    width: 150px;
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logos-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.logos-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+/* Jalur gerak logo */
+.logos-track {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    min-width: 100%;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Gaya item logo individual */
+.logo-item {
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+}
+
+.logo-item img {
+    max-width: 100%;
+    max-height: 45px;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+/* Efek saat logo disorot */
+.logo-item:hover {
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-8px);
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Bagian Statistik di bawah logo */
+.stats-box {
+    margin-top: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 40px;
+}
+
+.stat-number {
+    font-weight: 800;
+    color: #0d6efd;
+    font-size: 1.5rem;
+    display: block;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Berhenti jalan saat kursor berada di atas area logo */
+.logos-wrapper:hover .logos-track {
+    animation-play-state: paused;
+}
+/* sponsored end */
+
+/* organograma start */
+.org-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.org-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Styling Kartu Jabatan */
+.org-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    min-width: 220px;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.org-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Foto Profile */
+.profile-img-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e9ecef;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-placeholder {
+    font-size: 2.5rem;
+    color: #adb5bd;
+    line-height: 80px;
+}
+
+.role-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.role-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.person-name {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* Warna per Tingkatan */
+.level-pres {
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+.level-vp {
+    background: #f5f3ff;
+    color: #5b21b6;
+    border: 1px solid #ddd6fe;
+}
+.level-inti {
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.level-komisi {
+    background: #fffbeb;
+    color: #92400e;
+    border: 1px solid #fef3c7;
+}
+/* organograma end */
+
+/* list student start */
+.list-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background: white;
+    overflow: hidden;
+}
+.student-row {
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+}
+.student-row:last-child {
+    border-bottom: none;
+}
+.student-row:hover {
+    background-color: #f8fbff;
+}
+.avatar-sm {
+    width: 45px;
+    height: 45px;
+    background-color: #eef2f7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #5a67d8;
+    margin-right: 20px;
+}
+.search-bar {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+}
+.filter-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+.filter-btn {
+    white-space: nowrap;
+    border-radius: 50px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #dee2e6;
+    background: white;
+    color: #666;
+    transition: all 0.2s;
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #5a67d8;
+    border-color: #5a67d8;
+    color: white;
+}
+.status-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 50px;
+}
+.category-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #5a67d8;
+    background: #f0f2ff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.btn-detail {
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+/* Style untuk Modal */
+.modal-content {
+    border: none;
+    border-radius: 16px;
+}
+.info-label {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+/* list student end */
+
+/* sign up start */
+.signup-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+}
+.signup-header {
+    background: #4e54c8;
+    background: linear-gradient(to right, #8f94fb, #4e54c8);
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+.form-section {
+    padding: 40px;
+}
+.form-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #555;
+}
+.form-control,
+.form-select {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+.form-control:focus {
+    background-color: #fff;
+    border-color: #4e54c8;
+    box-shadow: 0 0 0 0.25 row rgba(78, 84, 200, 0.1);
+}
+.btn-signup {
+    background: #4e54c8;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+.btn-signup:hover {
+    background: #3b41a8;
+    transform: translateY(-2px);
+}
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+.step-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dee2e6;
+}
+.step-dot.active {
+    background: #4e54c8;
+    width: 30px;
+    border-radius: 10px;
+}
+/* sign up end */
+
+/* login start */
+.login-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.login-header {
+    padding: 40px 40px 20px;
+    text-align: center;
+}
+.logo-icon {
+    width: 64px;
+    height: 64px;
+    background: #f0f2ff;
+    color: #4e54c8;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+}
+.form-section {
+    padding: 0 40px 40px;
+}
+.input-group-text {
+    background-color: #f8f9fa;
+    border-right: none;
+    color: #adb5bd;
+}
+.form-control {
+    background-color: #f8f9fa;
+    border-left: none;
+    padding: 12px;
+}
+.form-control:focus {
+    background-color: white;
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+.btn-login {
+    background: #4e54c8;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: 700;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+.btn-login:hover {
+    background: #3b41a8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+}
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #adb5bd;
+    font-size: 0.85rem;
+}
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+.divider:not(:empty)::before {
+    margin-right: 0.5em;
+}
+.divider:not(:empty)::after {
+    margin-left: 0.5em;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.btn-social {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #555;
+    text-decoration: none;
+}
+.btn-social:hover {
+    background-color: #f8f9fa;
+    border-color: #ddd;
+}
+/* login end */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
