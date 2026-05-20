@@ -8,11 +8,14 @@ use App\Models\ArticleCategory;
 class ArticleService 
 {
     // retrieve all data form article model
-    public function getAllArticles()
+    public function getAllArticles($search = null)
     {
         return Article::with('articleCategory')
+            ->when($search, function($query) use ($search) {
+                $query->where('title', 'like', '%' . $search . '%');
+            })
             ->latest()
-            ->paginate(4);
+            ->paginate(8);
     }
 
     // retrieve data by slug
@@ -33,6 +36,5 @@ class ArticleService
 
     public function categories(){
         return ArticleCategory::all();
-        
     }
 }

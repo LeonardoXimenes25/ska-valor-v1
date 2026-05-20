@@ -22,7 +22,7 @@ class MailCategoryResource extends Resource
     protected static ?string $navigationLabel = 'Kategoria';
     protected static string | UnitEnum | null $navigationGroup = 'Manajementu Karta';
     
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFolder;
 
     public static function form(Schema $schema): Schema
     {

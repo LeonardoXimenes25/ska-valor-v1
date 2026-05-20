@@ -2,8 +2,12 @@
     <div class="container d-flex align-items-center">
 
         <!-- LEFT: LOGO -->
-        <a class="navbar-brand fw-bold text-primary" href="{{route('home')}}">
-            <img src="{{asset('assets/img/ska-valor.png')}}" alt="logo ska valor lautem" width="30" height="30">SKA VALOR
+        <a class="navbar-brand fw-bold text-primary" href="{{route('home')}}" wire:navigate.hover>
+            <img src="{{asset('assets/img/ska-valor.webp')}}" 
+                alt="logo ska valor lautem" 
+                width="30" 
+                height="30"
+                loading="lazy" wire:navigate.hover>SKA VALOR
         </a>
 
         <!-- TOGGLER (mobile) -->
@@ -19,8 +23,21 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('home')}}" wire:navigate.hover>Beranda</a></li>
                 <li class="nav-item"><a class="nav-link" href="#goals">Objetivu</a></li>
                 <li class="nav-item"><a class="nav-link" href="#program">Programa</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{route('article')}}" wire:navigate.hover>Portal Informasaun</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{route('list-lesson')}}" wire:navigate.hover>Materia</a></li>
+
+                {{-- Media --}}
+                <li class="nav-item dropdown" x-data="{ open: false }">
+                    <a class="nav-link dropdown-toggle" 
+                    href="#" 
+                    @click.prevent="open = !open" 
+                    @click.outside="open = false">
+                        Media
+                    </a>
+                    <ul class="dropdown-menu" :class="{ 'show': open }">
+                        <li><a class="dropdown-item" href="{{route('schedule')}}" wire:navigate.hover>Horariu</a></li>
+                        <li><a class="dropdown-item" href="{{route('article')}}" wire:navigate.hover>Portal Informasaun</a></li>
+                        <li><a class="dropdown-item" href="{{route('list-lesson')}}" wire:navigate.hover>Materia</a></li>
+                    </ul>
+                </li>
 
                 <li class="nav-item dropdown" x-data="{ open: false }">
                     <a class="nav-link dropdown-toggle" 

@@ -21,7 +21,8 @@ class ModulesTable
                     ->label('Materia'),
 
                 TextColumn::make('description')
-                    ->label('Deskripsaun'),
+                    ->label('Deskripsaun')
+                    ->formatStateUsing(fn ($state) => $state ?: 'N/A'),
 
                 TextColumn::make('file_path')
                     ->label('Dokumentus')

@@ -21,7 +21,7 @@ class ProgramResource extends Resource
     protected static ?string $navigationLabel = 'Programa';
     protected static string | UnitEnum | null $navigationGroup = 'Programa Edukasaun';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFolder;
 
     public static function form(Schema $schema): Schema
     {

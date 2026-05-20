@@ -8,6 +8,9 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\Filter;
+use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class StudentsTable
@@ -19,7 +22,7 @@ class StudentsTable
                 TextColumn::make('student_id')->label('ID Estudante')->searchable()->sortable(),
                 TextColumn::make('name')->label('Naran')->searchable()->sortable(),
                 TextColumn::make('sex')->label('Sexu')->searchable()->sortable(),
-                TextColumn::make('date_of_birth')->label('Data Moris')->searchable()->sortable(),
+                TextColumn::make('date_of_birth')->date('d-m-Y')->label('Data Moris')->searchable()->sortable(),
                 TextColumn::make('place_of_birth')->label('Fatin Moris')->searchable()->sortable(),
 
                 // lokasi
@@ -39,8 +42,7 @@ class StudentsTable
                 TextColumn::make('parent_name')->label('Naran Pai/Mae')->searchable()->sortable(),
                 TextColumn::make('parent_phone')->label('Telemovel Pai/Mae')->searchable()->sortable(),
                 TextColumn::make('status')->label('Status')->searchable()->sortable(),
-                TextColumn::make('is_active')->label('Ativu')->searchable()->sortable(),
-                TextColumn::make('program_category.name')->label('Kategoria Programa')->searchable()->sortable(),
+                TextColumn::make('programCategory.name')->label('Kategoria Programa')->searchable()->sortable(),
                 TextColumn::make('enrollment_date')->label('Data Matricula')->searchable()->sortable(),
                 ImageColumn::make('image')
                     ->label('Imajen')
@@ -48,12 +50,16 @@ class StudentsTable
             ])
             ->stackedOnMobile()
             ->filters([
-                //
+                    SelectFilter::make('status')
+                        ->options([
+                            'active' => 'active',
+                            'dropout' => 'dropout',
+                            'alumni' => 'alumni',
+                        ]),
             ])
             ->emptyStateHeading('No posts yet')
             ->emptyStateDescription('Once you write your first post, it will appear here.')
             ->emptyStateIcon('heroicon-o-bookmark')
-
             ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),

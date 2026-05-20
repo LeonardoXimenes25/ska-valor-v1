@@ -2,12 +2,13 @@
 
 namespace App\Filament\Resources\Teachers\Schemas;
 
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
 
 class TeacherForm
 {
@@ -72,7 +73,7 @@ class TeacherForm
                                 ->label('Status Note')
                                 ->formatStateUsing(fn ($state) => $state ?? 'N/A'),
 
-                            TextInput::make('join_date')
+                            DatePicker::make('join_date')
                                 ->label('Join Date')
                                 ->formatStateUsing(fn ($state) => $state ?? 'N/A'),
                         ])->columns(2),
@@ -89,7 +90,7 @@ class TeacherForm
                             TextInput::make('degree_level')
                                 ->label('Nivel Edukasaun'),
 
-                            TextInput::make('graduation_year')
+                            DatePicker::make('graduation_year')
                                 ->label('Tinan Graduasaun'),
                         ])->columns(2),
             ])->columns(1);

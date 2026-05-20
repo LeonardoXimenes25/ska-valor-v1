@@ -22,7 +22,6 @@ use Illuminate\Database\Eloquent\Model;
                 'parent_name', 
                 'parent_phone', 
                 'status', 
-                'is_active', 
                 'program_category_id', 
                 'enrollment_date'])]
 
@@ -65,7 +64,6 @@ class Student extends Model
             return [
                 'date_of_birth' => 'date',
                 'enrollment_date' => 'date',
-                'is_active' => 'boolean',
             ];
         }
 

@@ -31,7 +31,7 @@ class ProgramsTable
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('description')
-                    ->label('Deskripasaun'),
+                    ->label('Deskrisaun'),
                 TextColumn::make('is_active')
                     ->label('Observasaun')
                     ->searchable()

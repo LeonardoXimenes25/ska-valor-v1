@@ -2,7 +2,15 @@
         <header class="container py-5 text-center">
             <h2 class="display-5 fw-bold mb-3 text-dark">Informasi Terkini & Terpercaya</h2>
             <p class="text-muted mx-auto lead" style="max-width: 700px;">Temukan artikel menarik seputar teknologi, kesehatan, dan gaya hidup setiap harinya hanya di portal kami.</p>
+            <livewire:components.search-input 
+                model="App\Models\Article" 
+                column="title" 
+                label="Article" 
+                placeholder="Buka titulu article..." 
+            />
         </header>
+        
+        <!-- Search Section -->
 
         <main class="container pb-5">
             <div class="row g-4" id="article-container">
@@ -32,6 +40,12 @@
                 @endforeach
             </div>
         </main>
+
+        {{-- paginantion start --}}
+        <div class="container mt-4">
+            {{ $articles->links() }}
+        </div>
+        {{-- pagination end --}}
     </div>
 
 @push('styles')

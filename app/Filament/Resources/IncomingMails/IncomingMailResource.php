@@ -22,7 +22,7 @@ class IncomingMailResource extends Resource
     protected static ?string $navigationLabel = 'Karta Tama';
     protected static string | UnitEnum | null $navigationGroup = 'Manajementu Karta';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedEnvelope;
 
     public static function form(Schema $schema): Schema
     {

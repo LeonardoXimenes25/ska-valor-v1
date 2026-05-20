@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Schedule;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
@@ -57,5 +58,10 @@ class Teacher extends Model
             'leave_end_date' => 'date',
             'exit_date' => 'date',
         ];
+    }
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
     }
 }

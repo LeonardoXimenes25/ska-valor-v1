@@ -21,7 +21,7 @@ class ModuleResource extends Resource
     protected static ?string $navigationLabel = 'Modul';
     protected static string | UnitEnum | null $navigationGroup = 'E-Learning';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocument;
 
     public static function form(Schema $schema): Schema
     {

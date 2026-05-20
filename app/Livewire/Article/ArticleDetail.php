@@ -9,7 +9,8 @@ class ArticleDetail extends Component
 {
     public $article;
 
-    public function mount(ArticleService $articleService, $slug){
+    public function mount(ArticleService $articleService, $slug)
+    {
         $this->article = $articleService->getArticleBySlug($slug);
     }
     

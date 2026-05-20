@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Baranda') | SKA VALOR</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/ska-valor.png') }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preload" as="image" href="URL_HERO_IMAGE">
-    @livewireStyles
-    @stack('styles')
-</head>
-<body>
-    <!-- Navigation start -->
-    {{-- @include('partials.navbar') --}}
-    <livewire:components.navbar/>
-    {{-- navigation end --}}
+        <title>{{ $title ?? config('app.name') }}</title>
 
-    <!-- Hero Section -->
-    {{ $slot }}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Footer start -->
-    <livewire:components.footer/>
-    {{-- footer end --}}
-    
-    {{-- livewire js --}}
-    @livewireScripts
+        {{-- google fonts start --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        {{-- google fonts end --}}
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="{{ asset('assets/js/script.js') }}" defer></script>
-
-    {{-- sweetalert --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-</body>
+        @livewireStyles
+    </head>
+    <body>
+        <livewire:components.navbar/>
+        {{ $slot }}
+        <livewire:components.footer/>
+        @livewireScripts
+    </body>
 </html>

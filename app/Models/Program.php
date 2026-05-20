@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Schedule;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,5 +20,10 @@ class Program extends Model
     public function programCategory(): BelongsTo
     {
         return $this->belongsTo(ProgramCategory::class, 'program_category_id');
+    }
+
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
     }
 }

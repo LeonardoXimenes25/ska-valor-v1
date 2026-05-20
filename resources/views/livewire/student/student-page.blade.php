@@ -1,15 +1,17 @@
-<div class="container mt-5 pt-5 vh-100">
-        <header class="text-center mb-1">
+<div>
+    <div class="container mt-5 pt-5 vh-100">
+        <header class="text-center mb-3">
             <h3 class="fw-bold text-">E-Student directory</h3>
             <p class="lead">Kelola daftar siswa berdasarkan peminatan bahasa dan teknologi</p>
+            <livewire:components.search-input 
+                    model="App\Models\Student" 
+                    column="name" 
+                    label="estudante" 
+                    placeholder="Buka estudante..." 
+                />
         </header>
 
         <!-- Search Section -->
-        <livewire:components.search-input 
-            model="App\Models\Student"
-            column="name"
-            placeholder="Search Student"
-        />
 
     <!-- Category Filter Tags -->
     <div class="filter-tags">
@@ -27,6 +29,7 @@
             </button>
         @endforeach
     </div>
+    <!-- Category Filter Tags End -->
 
     <!-- List Section -->
     <div class="list-card">
@@ -58,7 +61,7 @@
                                 '{{$student->status}}', 
                                 '{{$student->birth_place}}', '
                                 '{{ $student->birth_of_date ? $student->birth_of_date->format('d-m-Y') : '-' }}')">
-                        Detail <i class="bi bi-chevron-right ms-1"></i>
+                        Haree Detailu <i class="bi bi-chevron-right ms-1"></i>
                     </button>
                 </div>
             </div>
@@ -71,7 +74,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0">
             <div class="modal-header border-0 pb-0">
-                <h5 class="modal-title fw-bold">Detail Profil Siswa</h5>
+                <h5 class="modal-title fw-bold">Detailu Estudante</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-4">
@@ -81,14 +84,18 @@
                     </div>
                     <div>
                         <h4 class="fw-bold mb-0" id="detName">{{$student->name}}</h4>
-                        <span id="detClass" class="text-primary fw-medium">Kelas</span>
+                        {{-- <span id="detClass" class="text-primary fw-medium">Kelas</span> --}}
                     </div>
                 </div>
 
                 <div class="row g-3">
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="info-label">NRE</div>
                         <div id="detNisn" class="fw-semibold">{{$student->student_id}}</div>
+                    </div>
+                    <div class="col-3 align-self-end">
+                        <div class="info-label">Programa</div>
+                        <div id="detNisn" class="fw-semibold">{{$student->programCategory->name}}</div>
                     </div>
                     <div class="col-6">
                         <div class="info-label">Status</div>
@@ -96,7 +103,7 @@
                     </div>
                     <div class="col-12">
                         <div class="info-label">Fatin Moris & Data Moris</div>
-                        <div id="detBirth" class="fw-semibold text-dark">{{$student->date_of_birth}}, {{$student->place_of_birth}}</div>
+                        <div id="detBirth" class="fw-semibold text-dark">{{$student->place_of_birth}}, {{$student->date_of_birth->format('d-m-Y')}}</div>
                     </div>
                 </div>
             </div>
@@ -109,4 +116,5 @@
 @endforeach
 
 {{ $students->links('pagination::bootstrap-5') }}
+</div>
 </div>

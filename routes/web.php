@@ -1,13 +1,13 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\SocialiteController;
 use App\Livewire\Article\ArticleDetail;
 use App\Livewire\Article\ArticlePage;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Home;
 use App\Livewire\Lesson\LessonPage;
+use App\Livewire\Schedule\SchedulePage;
 use App\Livewire\Section\Organograma;
 use App\Livewire\Student\StudentPage;
 use App\Livewire\Teacher\TeacherPage;
@@ -31,6 +31,9 @@ Route::get('/lista-professor', TeacherPage::class)->name('list-teacher');
 Route::get('/article', ArticlePage::class)->name('article');
 Route::get('/detail-article/{slug}', ArticleDetail::class)->name('detail-article');
 
+// Schedule
+Route::get('/schedule', SchedulePage::class)->name('schedule');
+
 // laravel socialite
 // google
 Route::get('auth/google', Login::class)->name('auth.google');
@@ -50,3 +53,11 @@ Route::get('/login', Login::class)->name('login');
 
 // static route
 Route::get('/Organograma', Organograma::class)->name('organograma');
+
+Route::get('/ai', function(){
+    $response = \Laravel\Ai\agent(
+        instructions: 'Kamu adalah asisten yang helpfull'
+    )->prompt('create article about timor leste');
+
+    return (string) $response;
+});

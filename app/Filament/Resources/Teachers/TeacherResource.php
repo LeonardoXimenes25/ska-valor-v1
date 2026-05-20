@@ -19,10 +19,10 @@ class TeacherResource extends Resource
 {
     protected static ?string $model = Teacher::class;
     
-    protected static ?string $navigationLabel = 'Formador';
-    protected static string | UnitEnum | null $navigationGroup = 'Manajementu Utilizador';
+    protected static ?string $navigationLabel = 'Lista Formador';
+    protected static string | UnitEnum | null $navigationGroup = 'Manajementu Formador';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUser;
 
     public static function form(Schema $schema): Schema
     {

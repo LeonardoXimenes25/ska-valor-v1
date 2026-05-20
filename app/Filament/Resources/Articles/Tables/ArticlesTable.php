@@ -18,6 +18,7 @@ class ArticlesTable
     {
         return $table
             ->columns([
+                TextColumn::make('id')->label('Nu.'),
                 TextColumn::make('title')->label('Titulu'),
                 TextColumn::make('category_id')
                     ->label('Kategoria')

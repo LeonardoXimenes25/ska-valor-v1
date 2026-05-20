@@ -22,7 +22,7 @@ class OutgoingMailResource extends Resource
     protected static ?string $navigationLabel = 'Karta Sai';
     protected static string | UnitEnum | null $navigationGroup = 'Manajementu Karta';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedEnvelopeOpen;
 
     public static function form(Schema $schema): Schema
     {
